@@ -38,7 +38,7 @@ function ProductInfo() {
       </div>
       <div className="add-to-cart-quantity">
         <div className="quantity-input">
-          <input type="text" placeholder="0" value={inputValue} />
+          <input type="text" placeholder="0" value={inputValue} readOnly />
           <button className="btn-minus" onClick={handleMinus}>
             <img src={iconMinus} alt="minus button" />
           </button>
