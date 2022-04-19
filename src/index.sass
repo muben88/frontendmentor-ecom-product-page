@@ -84,26 +84,8 @@ body
     opacity: .8
 
 .thumbnails
-    display: grid
-    grid-template-columns: repeat(4, 1fr)
-    column-gap: 1rem
-
-    .thumb-img
-        margin-top: 1rem
-        cursor: pointer
-    .thumb-img:hover
-        opacity: .7
-        transition: .1s ease-in
-    img
-        max-width: 100%
-        height: auto
-        border-radius: .4rem
-
-
-
-
-
-
+    display: none
+    
 .product-info
     padding:1rem
 
@@ -242,3 +224,19 @@ body
         
     .quantity-input
         margin: 0
+
+    .thumbnails
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        column-gap: 1rem
+
+        .thumb-img
+            margin-top: 1rem
+            cursor: pointer
+        .thumb-img:hover
+            opacity: .7
+            transition: .1s ease-in
+        img
+            max-width: 100%
+            height: auto
+            border-radius: .4rem
