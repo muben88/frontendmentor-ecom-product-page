@@ -4,11 +4,16 @@ import productImg2 from "../assets/images/image-product-3.jpg";
 import productImg3 from "../assets/images/image-product-4.jpg";
 import iconNext from "../assets/images/icon-next.svg";
 import iconPrev from "../assets/images/icon-previous.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Slider() {
   const imgs = [productImg0, productImg1, productImg2, productImg3];
+
   const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    setIndex(0);
+  }, []);
 
   const handleNext = () => {
     if (index === imgs.length - 1) {
@@ -41,18 +46,13 @@ function Slider() {
       </div>
 
       <div className="thumbnails">
-        <div className="thumb-img">
-          <img src={imgs[0]} alt={imgs[0]} />
-        </div>
-        <div className="thumb-img">
-          <img src={imgs[1]} alt={imgs[1]} />
-        </div>
-        <div className="thumb-img">
-          <img src={imgs[2]} alt={imgs[2]} />
-        </div>
-        <div className="thumb-img">
-          <img src={imgs[3]} alt={imgs[3]} />
-        </div>
+        {imgs.map((item, i) => {
+          return (
+            <div className="thumb-img" key={i} onClick={() => setIndex(i)}>
+              <img src={item} className={index === i ? "active" : ""} />
+            </div>
+          );
+        })}
       </div>
     </div>
   );
