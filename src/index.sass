@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap')
+$orange: hsl(26, 100%, 55%)
+$pale_orange: hsl(25, 100%, 94%)
+$dark_blue: hsl(220, 13%, 13%)
+$dark_grayish_blue: hsl(219, 9%, 45%)
+$grayish_blue: hsl(220, 14%, 75%)
+$light_grayish_blue: hsl(223, 64%, 98%)
+$white: hsl(0, 0%, 100%)
+$black: hsl(0, 0%, 0%)
+
+
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+
+body 
+    font-family: 'kumbh sans'
+    font-size: 15px
+
+.header,
+.prodcut-pricing
+    display: flex
+    justify-content: space-between
+    align-items: center
+    flex-direction: row
+
+.header
+    width: 100%
+    padding: 1rem
+
+.nav-links
+    display: none
+
+.header-part
+    display: flex
+    align-items: center
+    div
+        margin: .5rem
+
+.hamburger-menu,
+.cart
+    cursor: pointer
+    img
+        width: 1.5rem
+
+.user
+    cursor: pointer
+    img
+        width: 2rem
+
+.slider-top
+        position: relative
+
+.slide img
+        max-width: 100%
+        height: auto
+
+.btn-prev,
+.btn-next
+    width: 2rem
+    height: 2rem
+    border-radius: 50%
+    background-color: $white
+    cursor: pointer
+    border-style: none
+    position: absolute
+    display: flex
+    justify-content: center
+    align-items: center
+    img
+        width: .6rem
+
+.btn-prev
+    top: 50%
+    left: 1rem
+    transform: translateY(-50%)
+.btn-next
+    top: 50%
+    right: 1rem
+    transform: translateY(-50%)
+
+.btn-next:hover, .btn-prev:hover
+    opacity: .8
+
+.thumbnails
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    column-gap: 1rem
+
+    .thumb-img
+        margin-top: 1rem
+        cursor: pointer
+    .thumb-img:hover
+        opacity: .7
+        transition: .1s ease-in
+    img
+        max-width: 100%
+        height: auto
+        border-radius: .4rem
+
+
+
+
+
+
+.product-info
+    padding:1rem
+
+.company-title
+    color: $orange
+    font-weight: 600
+
+.product-title
+    font-size:2rem
+    margin: .5rem 0
+
+.product-description
+    line-height: 1.5
+    margin: 1rem 0
+
+.discounted-price
+    font-weight: 600
+    font-size: 1.5rem
+    span
+        font-size: 1rem
+        background-color: $pale_orange
+        color: $orange
+        padding: .2rem
+        border-radius: .2rem
+        margin-left: .5rem
+
+.original-price
+    color: $grayish_blue
+    text-decoration: line-through
+    font-weight: 600
+
+.quantity-input
+    margin: 1rem 0
+    position: relative
+    input
+        width: 100%
+        padding: 1rem 0
+        background-color: $light_grayish_blue
+        color: $black
+        font-weight: 600
+        font-size: 1.2rem
+        border: none
+        border-radius: .5rem
+        text-indent: 45%
+    button
+        width: 2rem
+        height: 2rem
+        background-color: transparent
+        position: absolute
+    .btn-minus
+        top: 50%
+        left: .5rem
+        transform: translateY(-50%)
+    .btn-plus
+        top: 50%
+        right: .5rem
+        transform: translateY(-50%)
+
+.add-to-cart-btn button,
+.quantity-input button
+        cursor: pointer
+        border: none
+        display: flex
+        justify-content: center
+        align-items: center
+
+.add-to-cart-btn 
+    button
+        width: 100%
+        padding: 1rem 0
+        background-color: $orange
+        color: $white
+        border-radius: .5rem
+        font-weight: 600
+        font-size: 1rem
+        box-shadow: 0px 7px 16px -6px $orange
+    img
+        margin-right: 1rem
+        filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(307deg) brightness(100%) contrast(500%)
+
+.add-to-cart-btn button:hover,
+.quantity-input button:hover
+    opacity: .7
+    transition: .2s ease-in
+
+
+
+
+
+@media (min-width: 750px) 
+    body
+        padding: 0 2rem
+
+    .header
+        border-bottom: 1px solid $light_grayish_blue
+
+    .main
+        display: grid
+        grid-template-columns: repeat(2,50%)
+        column-gap: 2rem
+        place-items: center
+        margin: 2rem 0
+
+    .hamburger-menu
+        display: none
+
+    .nav-links
+        display: block
+        ul li
+            cursor: pointer
+            list-style: none
+            display: inline-block
+            margin: .7rem
+    
+    .slider-container
+        width: 70%
+
+    .slide
+        img
+            border-radius: 1rem
+
+    .product-info
+        padding-right: 10rem
+    
+    .prodcut-pricing
+        align-items: flex-start
+        flex-direction: column
+        p:last-child
+            margin-top: .5rem
+            margin-bottom: 2rem
+        
+    .add-to-cart-quantity
+        display: grid
+        grid-template-columns: .5fr 1fr
+        column-gap: 1rem
+        
+    .quantity-input
+        margin: 0
