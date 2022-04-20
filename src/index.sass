@@ -171,11 +171,24 @@ body
     opacity: .7
     transition: .2s ease-in
 
+.modal-container
+    display: none
 
 
 @media (min-width: 950px) 
     body
         padding: 0 2rem
+
+    .darken-bg
+        position: absolute
+        width: 105%
+        height: 115vh
+        top: -8rem
+        left: -2rem
+        right: 0
+        bottom: 0
+        background-color: rgba(0, 0, 0, 0.7)
+        z-index: 1
 
     .header
         border-bottom: 1px solid $light_grayish_blue
@@ -186,6 +199,7 @@ body
         column-gap: 2rem
         place-items: center
         margin: 2rem 0
+        position: relative
 
     .hamburger-menu
         display: none
@@ -218,6 +232,7 @@ body
     .slide
         img
             border-radius: 1rem
+            cursor: pointer
 
     .product-info
         padding-right: 10rem
@@ -256,7 +271,65 @@ body
         border: 3px solid $orange
         opacity: .7
 
+    .modal-container
+        display: block
+        width: 25rem
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        z-index: 1
+    .close-modal img
+        position: absolute
+        top: -1.5rem
+        right: 0
+        margin-bottom: .5rem
+        cursor: pointer
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103) contrast(103%)
+    .close-modal img:hover
+        filter: invert(54%) sepia(59%) saturate(1941%) hue-rotate(347deg) brightness(101%) contrast(101%)
+    .modal-top
+        position: relative
+    .modal-slide img
+        max-width: 100%
+        height: auto
+        border-radius: 1rem
+    .modal-btn-prev,
+    .modal-btn-next
+        display: flex
+        justify-content: center
+        align-items: center
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        width: 2.5rem
+        height: 2.5rem
+        background-color: $white
+        border-radius: 50%
+        border-style: none
+        cursor: pointer
+        img
+            width: .5rem
 
+    .modal-btn-prev
+        left: -1rem
+    .modal-btn-next
+        right: -1rem
+    .modal-btn-prev:hover,
+    .modal-btn-next:hover
+        opacity: .7
+    
+    .modal-thumbnails
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        gap: 1rem
+        margin-top: 1rem
+
+    .modal-thumb-img img
+        cursor: pointer
+        max-width: 100%
+        height: auto
+        border-radius: .5rem
 
 
 @media (min-width: 550px) and (max-width: 949px)

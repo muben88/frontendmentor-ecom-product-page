@@ -1,3 +1,4 @@
+import ModalSlideshow from "./ModalSlideshow";
 import productImg0 from "../assets/images/image-product-1.jpg";
 import productImg1 from "../assets/images/image-product-2.jpg";
 import productImg2 from "../assets/images/image-product-3.jpg";
@@ -10,6 +11,15 @@ function Slider() {
   const imgs = [productImg0, productImg1, productImg2, productImg3];
 
   const [index, setIndex] = useState(0);
+
+  const [modal, setModal] = useState(false);
+
+  const setTrue = () => {
+    setModal(true);
+  };
+  const setFalse = () => {
+    setModal(false);
+  };
 
   useEffect(() => {
     setIndex(0);
@@ -32,8 +42,9 @@ function Slider() {
 
   return (
     <div className="slider-container">
+      <div className={modal ? "darken-bg" : ""}></div>
       <div className="slider-top">
-        <div className="slide">
+        <div className="slide" onClick={setTrue}>
           <img src={imgs[index]} alt="product 1" />
         </div>
 
@@ -54,6 +65,7 @@ function Slider() {
           );
         })}
       </div>
+      {modal && <ModalSlideshow imgs={imgs} setFalse={setFalse} />}
     </div>
   );
 }
