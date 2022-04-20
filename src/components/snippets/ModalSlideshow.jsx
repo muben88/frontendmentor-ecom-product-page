@@ -1,6 +1,6 @@
-import iconNext from "../assets/images/icon-next.svg";
-import iconPrev from "../assets/images/icon-previous.svg";
-import closeIcon from "../assets/images/icon-close.svg";
+import iconNext from "../../assets/images/icon-next.svg";
+import iconPrev from "../../assets/images/icon-previous.svg";
+import closeIcon from "../../assets/images/icon-close.svg";
 import { useEffect, useState } from "react";
 
 function ModalSlideshow({ imgs, setFalse }) {

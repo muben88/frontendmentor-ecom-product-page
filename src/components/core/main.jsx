@@ -1,5 +1,5 @@
-import Slider from "./Slider";
-import ProductInfo from "./ProductInfo";
+import Slider from "../snippets/Slider";
+import ProductInfo from "../snippets/ProductInfo";
 
 function Main() {
   return (

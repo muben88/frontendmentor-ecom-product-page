@@ -1,6 +1,6 @@
-import iconPlus from "../assets/images/icon-plus.svg";
-import iconMinus from "../assets/images/icon-minus.svg";
-import cartIcon from "../assets/images/icon-cart.svg";
+import iconPlus from "../../assets/images/icon-plus.svg";
+import iconMinus from "../../assets/images/icon-minus.svg";
+import cartIcon from "../../assets/images/icon-cart.svg";
 import { useState } from "react";
 
 function ProductInfo() {

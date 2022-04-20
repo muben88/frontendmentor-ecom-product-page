@@ -1,10 +1,10 @@
 import ModalSlideshow from "./ModalSlideshow";
-import productImg0 from "../assets/images/image-product-1.jpg";
-import productImg1 from "../assets/images/image-product-2.jpg";
-import productImg2 from "../assets/images/image-product-3.jpg";
-import productImg3 from "../assets/images/image-product-4.jpg";
-import iconNext from "../assets/images/icon-next.svg";
-import iconPrev from "../assets/images/icon-previous.svg";
+import productImg0 from "../../assets/images/image-product-1.jpg";
+import productImg1 from "../../assets/images/image-product-2.jpg";
+import productImg2 from "../../assets/images/image-product-3.jpg";
+import productImg3 from "../../assets/images/image-product-4.jpg";
+import iconNext from "../../assets/images/icon-next.svg";
+import iconPrev from "../../assets/images/icon-previous.svg";
 import { useState, useEffect } from "react";
 
 function Slider() {
