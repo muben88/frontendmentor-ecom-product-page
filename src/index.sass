@@ -8,7 +8,6 @@ $light_grayish_blue: hsl(223, 64%, 98%)
 $white: hsl(0, 0%, 100%)
 $black: hsl(0, 0%, 0%)
 
-
 *
     box-sizing: border-box
     margin: 0
@@ -83,7 +82,8 @@ body
 .btn-next:hover, .btn-prev:hover
     opacity: .8
 
-.thumbnails
+.thumbnails,
+.modal-container
     display: none
     
 .product-info
@@ -171,10 +171,48 @@ body
     opacity: .7
     transition: .2s ease-in
 
-.modal-container
-    display: none
+.drawer
+    z-index: 1
+    position: absolute
+    top: 0
+    left: 0rem
+    background-color: $white
+    padding: 2rem
+    width: 70%
+    height: 154vh
+
+.close-menu
+    cursor: pointer
+    width: 1rem
+
+.drawer-nav-links
+        display: block
+        margin-top: 3rem
+        ul li
+            cursor: pointer
+            list-style: none
+            margin: 1.2rem 0
+            color: $black
+            font-weight: 700
+
+        li:hover
+            color: $grayish_blue
+            transition: .2s ease-out
+
+.drawer-darken-bg
+    position: absolute
+    width: 100%
+    height: 154vh
+    top: 0
+    right: 0
+    background-color: rgba(0, 0, 0, 0.7)
+    z-index: 1
 
 
+
+
+
+// Large device view
 @media (min-width: 950px) 
     body
         padding: 0 2rem
@@ -201,7 +239,9 @@ body
         margin: 2rem 0
         position: relative
 
-    .hamburger-menu
+    .hamburger-menu,
+    .drawer,
+    .drawer-darken-bg
         display: none
 
     .nav-links
@@ -332,6 +372,7 @@ body
         border-radius: .5rem
 
 
+// Medium device view
 @media (min-width: 550px) and (max-width: 949px)
     body
         padding: 0 2rem
@@ -348,6 +389,10 @@ body
 
     .hamburger-menu
         display: block
+
+    .drawer,
+    .drawer-darken-bg
+        height: 193vh
 
     .nav-links
         display: none
