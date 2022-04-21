@@ -3,16 +3,22 @@ import menuIcon from "../../assets/images/icon-menu.svg";
 import cartIcon from "../../assets/images/icon-cart.svg";
 import userImg from "../../assets/images/image-avatar.png";
 import DrawerMenu from "../snippets/DrawerMenu";
+import Cart from "../snippets/Cart";
 import { useState } from "react";
 
 function Header() {
   const [showDrawer, setShowDrawer] = useState(false);
+  const [showCart, setShowCart] = useState(false);
 
   const showDrawerMenu = () => {
     setShowDrawer(true);
   };
   const hideDrawerMenu = () => {
     setShowDrawer(false);
+  };
+
+  const toggleCart = () => {
+    setShowCart(!showCart);
   };
 
   return (
@@ -35,7 +41,7 @@ function Header() {
         </div>
       </div>
       <div className="header-part">
-        <div className="cart">
+        <div className="cart" onClick={toggleCart}>
           <img src={cartIcon} alt="cart" />
         </div>
         <div className="user">
@@ -48,6 +54,7 @@ function Header() {
           <DrawerMenu hideMenu={hideDrawerMenu} />
         </>
       )}
+      {showCart && <Cart />}
     </div>
   );
 }
