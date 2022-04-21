@@ -46,7 +46,13 @@ body
 .user
     cursor: pointer
     img
-        width: 2rem
+        width: 2.5rem
+        border: 3px solid transparent
+        border-radius: 50%
+
+.user img:hover
+    border: 2px solid $orange
+    border-radius: 50%
 
 .slider-top
         position: relative
@@ -207,6 +213,41 @@ body
     right: 0
     background-color: rgba(0, 0, 0, 0.7)
     z-index: 1
+
+// cart 
+.cart-container
+    background-color: $white
+    border-radius: .5rem
+    min-width: 95%
+    position: absolute
+    top: 6.5rem
+    left: 0.8rem
+    z-index: 1
+
+.cart-title
+    border-bottom: 1px solid $light_grayish_blue
+
+.cart-title,
+.cart-items
+    padding: 1rem
+    font-weight: 600
+
+.cart-items
+    min-height: 10rem
+    color: $dark_grayish_blue
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+
+
+
+
+
+
+
+
+
 
 
 
@@ -370,6 +411,17 @@ body
         max-width: 100%
         height: auto
         border-radius: .5rem
+
+    //cart
+    .cart-container
+        min-width: 35%
+        top: 5rem
+        left: 62%
+        box-shadow: 0px 9px 23px -12px $black
+
+
+
+
 
 
 // Medium device view
