@@ -18,7 +18,8 @@ body
     font-size: 15px
 
 .header,
-.prodcut-pricing
+.prodcut-pricing,
+.cart-product
     display: flex
     justify-content: space-between
     align-items: center
@@ -240,11 +241,41 @@ body
     align-items: center
     flex-direction: column
 
+.cart-product
+    width: 100%
+    justify-content: space-evenly
+    .product-img img 
+        max-width: 5rem
+        height: auto
+        border-radius: .2rem
+    p
+        font-weight: 100
+        line-height: 1.5
+    span
+        font-weight: 600
+        color: $black
+    .delete-icon img
+        width: 1rem
+        height: auto
+        cursor: pointer
 
-
-
-
-
+.checkout-btn
+    width: 90%
+    margin: 1rem 0
+    button
+        width: 100%
+        padding: 1.2rem 0
+        background-color: $orange
+        border: 2px solid transparent
+        border-radius: .5rem
+        color: $white
+        font-weight: 600
+        cursor: pointer
+    button:hover
+        background-color: $white
+        color: $orange
+        border: 2px solid $orange
+        transition: .2s ease-in-out
 
 
 
