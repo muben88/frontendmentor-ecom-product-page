@@ -1,12 +1,15 @@
+import { useContext, useState } from "react";
+import GlobalContext from "../context";
 import logo from "../../assets/images/logo.svg";
 import menuIcon from "../../assets/images/icon-menu.svg";
 import cartIcon from "../../assets/images/icon-cart.svg";
 import userImg from "../../assets/images/image-avatar.png";
 import DrawerMenu from "../snippets/DrawerMenu";
 import Cart from "../snippets/Cart";
-import { useState } from "react";
 
 function Header() {
+  const { inputValue, cart } = useContext(GlobalContext);
+
   const [showDrawer, setShowDrawer] = useState(false);
   const [showCart, setShowCart] = useState(false);
 
@@ -42,6 +45,9 @@ function Header() {
       </div>
       <div className="header-part">
         <div className="cart" onClick={toggleCart}>
+          {cart && inputValue > 0 && (
+            <div className="cart-items-num">{inputValue}</div>
+          )}
           <img src={cartIcon} alt="cart" />
         </div>
         <div className="user">
