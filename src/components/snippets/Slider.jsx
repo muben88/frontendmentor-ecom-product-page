@@ -1,44 +1,24 @@
 import ModalSlideshow from "./ModalSlideshow";
-import productImg0 from "../../assets/images/image-product-1.jpg";
-import productImg1 from "../../assets/images/image-product-2.jpg";
-import productImg2 from "../../assets/images/image-product-3.jpg";
-import productImg3 from "../../assets/images/image-product-4.jpg";
 import iconNext from "../../assets/images/icon-next.svg";
 import iconPrev from "../../assets/images/icon-previous.svg";
-import { useState, useEffect } from "react";
+import GlobalContext from "../context";
+import { useContext, useEffect } from "react";
 
 function Slider() {
-  const imgs = [productImg0, productImg1, productImg2, productImg3];
-
-  const [index, setIndex] = useState(0);
-
-  const [modal, setModal] = useState(false);
-
-  const setTrue = () => {
-    setModal(true);
-  };
-  const setFalse = () => {
-    setModal(false);
-  };
+  const {
+    imgs,
+    index,
+    modal,
+    setIndex,
+    setTrue,
+    setFalse,
+    handleNext,
+    handlePrev,
+  } = useContext(GlobalContext);
 
   useEffect(() => {
     setIndex(0);
   }, []);
-
-  const handleNext = () => {
-    if (index === imgs.length - 1) {
-      setIndex(0);
-    } else {
-      setIndex(index + 1);
-    }
-  };
-  const handlePrev = () => {
-    if (index === 0) {
-      setIndex(imgs.length - 1);
-    } else {
-      setIndex(index - 1);
-    }
-  };
 
   return (
     <div className="slider-container">

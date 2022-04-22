@@ -1,29 +1,15 @@
 import iconNext from "../../assets/images/icon-next.svg";
 import iconPrev from "../../assets/images/icon-previous.svg";
 import closeIcon from "../../assets/images/icon-close.svg";
-import { useEffect, useState } from "react";
+import GlobalContext from "../context";
+import { useEffect, useContext } from "react";
 
 function ModalSlideshow({ imgs, setFalse }) {
-  const [index, setIndex] = useState(0);
+  const { index, setIndex, handleNext, handlePrev } = useContext(GlobalContext);
 
   useEffect(() => {
     setIndex(0);
   }, []);
-
-  const handleNext = () => {
-    if (index === imgs.length - 1) {
-      setIndex(0);
-    } else {
-      setIndex(index + 1);
-    }
-  };
-  const handlePrev = () => {
-    if (index === 0) {
-      setIndex(imgs.length - 1);
-    } else {
-      setIndex(index - 1);
-    }
-  };
 
   return (
     <div className="modal-container">
