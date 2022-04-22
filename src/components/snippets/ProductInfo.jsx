@@ -1,22 +1,12 @@
 import iconPlus from "../../assets/images/icon-plus.svg";
 import iconMinus from "../../assets/images/icon-minus.svg";
 import cartIcon from "../../assets/images/icon-cart.svg";
-import { useState } from "react";
+import { useContext } from "react";
+import GlobalContext from "../context";
 
 function ProductInfo() {
-  const [inputValue, setInputValue] = useState(0);
-
-  const handlePlus = () => {
-    setInputValue(inputValue + 1);
-  };
-
-  const handleMinus = () => {
-    if (inputValue < 1) {
-      setInputValue(0);
-    } else {
-      setInputValue(inputValue - 1);
-    }
-  };
+  const { inputValue, handleMinus, handlePlus, addToCart } =
+    useContext(GlobalContext);
 
   return (
     <div className="product-info">
@@ -47,7 +37,7 @@ function ProductInfo() {
           </button>
         </div>
         <div className="add-to-cart-btn">
-          <button>
+          <button onClick={addToCart}>
             <img src={cartIcon} alt="add to cart" />
             Add to cart
           </button>
